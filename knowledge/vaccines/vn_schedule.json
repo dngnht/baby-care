@@ -1,0 +1,36 @@
+{
+  "version": "draft-2026",
+  "verified": false,
+  "note": "Bản nháp theo lịch Tiêm chủng mở rộng (TCMR) Bộ Y tế. BẮT BUỘC đối chiếu văn bản hiện hành của Bộ Y tế/Viện Vệ sinh Dịch tễ Trung ương (tiemchungmorong.vn) trước khi đặt verified=true. Vắc xin dịch vụ: đối chiếu khuyến cáo VNVC/Hội Y học dự phòng & bác sĩ.",
+  "sources": ["https://tiemchungmorong.vn", "https://moh.gov.vn"],
+  "tcmr": [
+    {"code":"VGB_SS","name":"Viêm gan B sơ sinh","dose":1,"ageDays":0,"window":"trong 24 giờ đầu sau sinh"},
+    {"code":"BCG","name":"Lao (BCG)","dose":1,"ageDays":0,"window":"sơ sinh, càng sớm càng tốt (trong tháng đầu)"},
+    {"code":"DPT_VGB_HIB","name":"Bạch hầu-Ho gà-Uốn ván-Viêm gan B-Hib (5 trong 1)","dose":1,"ageMonths":2},
+    {"code":"OPV","name":"Bại liệt uống (bOPV)","dose":1,"ageMonths":2},
+    {"code":"DPT_VGB_HIB","dose":2,"ageMonths":3},
+    {"code":"OPV","dose":2,"ageMonths":3},
+    {"code":"DPT_VGB_HIB","dose":3,"ageMonths":4},
+    {"code":"OPV","dose":3,"ageMonths":4},
+    {"code":"IPV","name":"Bại liệt tiêm (IPV)","dose":1,"ageMonths":5},
+    {"code":"IPV","dose":2,"ageMonths":9},
+    {"code":"MEASLES","name":"Sởi","dose":1,"ageMonths":9},
+    {"code":"JE","name":"Viêm não Nhật Bản","dose":1,"ageMonths":12},
+    {"code":"JE","dose":2,"ageMonths":12,"afterPrevDays":14,"window":"1–2 tuần sau mũi 1"},
+    {"code":"JE","dose":3,"afterPrevDays":365,"window":"1 năm sau mũi 2"},
+    {"code":"DPT","name":"Bạch hầu-Ho gà-Uốn ván (nhắc)","dose":4,"ageMonths":18},
+    {"code":"MR","name":"Sởi-Rubella","dose":1,"ageMonths":18}
+  ],
+  "tcmr_pending_verification": [
+    {"code":"ROTA","name":"Rota virus (uống)","note":"Đang được đưa vào TCMR theo lộ trình – xác minh mốc tuổi & địa phương áp dụng"}
+  ],
+  "optional_service": [
+    {"code":"ROTA_SV","name":"Rota (dịch vụ)","note":"từ 6 tuần tuổi, 2–3 liều tùy loại"},
+    {"code":"PCV","name":"Phế cầu","note":"từ 6 tuần/2 tháng tuổi"},
+    {"code":"MENB","name":"Não mô cầu B"},{"code":"MENACWY","name":"Não mô cầu ACWY"},
+    {"code":"FLU","name":"Cúm","note":"từ 6 tháng, nhắc hằng năm"},
+    {"code":"MMR","name":"Sởi-Quai bị-Rubella"},{"code":"VAR","name":"Thủy đậu","note":"từ 9–12 tháng"},
+    {"code":"HEPA","name":"Viêm gan A","note":"từ 12 tháng"},
+    {"code":"TYPHOID","name":"Thương hàn"}
+  ]
+}

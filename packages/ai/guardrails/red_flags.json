@@ -1,0 +1,10 @@
+{ "verified": false, "note": "Cần bác sĩ nhi review trước khi phát hành",
+  "rules": [
+  {"id":"fever_u3m","when":"ageDays<90 && tempC>=38","message":"Bé dưới 3 tháng sốt từ 38°C: đưa bé đi khám ngay."},
+  {"id":"seizure","keywords":["co giật","giật mình liên tục","trợn mắt"],"message":"Gọi 115 / đến cấp cứu ngay."},
+  {"id":"breathing","keywords":["khó thở","thở rít","tím tái","rút lõm lồng ngực"],"message":"Đến cấp cứu ngay."},
+  {"id":"lethargy","keywords":["li bì","khó đánh thức","bỏ bú"],"message":"Đưa bé đi khám ngay."},
+  {"id":"dehydration","when":"wetDiapers24h<4 && ageDays>5","message":"Ít tã ướt – nguy cơ mất nước, liên hệ bác sĩ."},
+  {"id":"blood_stool","keywords":["phân có máu","nôn ra máu"],"message":"Đưa bé đi khám ngay."},
+  {"id":"jaundice","keywords":["vàng da"],"message":"Vàng da lan rộng/xuất hiện trong 24h đầu hoặc kéo dài >2 tuần: đi khám."}
+]}

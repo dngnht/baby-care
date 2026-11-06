@@ -1,0 +1,13 @@
+{ "verified": false, "source": "TODO: đối chiếu CDC 'Learn the Signs. Act Early.' (2022) / WHO motor milestones / tài liệu Nhi khoa VN",
+  "items": [
+  {"id":"m2_smile","month":2,"domain":"social","text":"Mỉm cười khi được nói chuyện"},
+  {"id":"m4_head","month":4,"domain":"motor","text":"Giữ vững đầu khi được bế"},
+  {"id":"m6_roll","month":6,"domain":"motor","text":"Lật từ ngửa sang sấp"},
+  {"id":"m9_sit","month":9,"domain":"motor","text":"Ngồi vững không cần đỡ"},
+  {"id":"m12_word","month":12,"domain":"language","text":"Gọi ba/mẹ có chủ đích"},
+  {"id":"m15_walk","month":15,"domain":"motor","text":"Tự đi vài bước"},
+  {"id":"m18_words","month":18,"domain":"language","text":"Nói ≥ 3 từ ngoài ba/mẹ"},
+  {"id":"m24_phrase","month":24,"domain":"language","text":"Ghép 2 từ (vd. 'uống sữa')"}
+  ],
+  "red_flags_redFlagIfNotBy": {"m4_head":6,"m9_sit":12,"m15_walk":18,"m24_phrase":30}
+}
