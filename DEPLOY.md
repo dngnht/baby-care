@@ -70,6 +70,7 @@ vercel --prod         # deploy production, in ra URL
 | Hiện tượng | Nguyên nhân / cách sửa |
 |---|---|
 | Build lỗi `Cannot find module '.../knowledge/...'` | Root Directory đang là `apps/web` → đổi về repo root |
+| `npm error ENOTFOUND` / `npm ci exited with 1` | `package-lock.json` chứa URL registry nội bộ → tạo lại lockfile bằng `npm ci --registry=https://registry.npmjs.org/` hoặc sửa `resolved` về `https://registry.npmjs.org/` (CI có bước chặn lỗi này) |
 | Build lỗi Node/`crypto.randomUUID` | Đặt Node 22 (Vercel: Settings → General → Node.js Version) |
 | Mở `/timeline` trực tiếp bị 404 | Thiếu rewrite SPA → kiểm tra `vercel.json` có `rewrites` |
 | Cài PWA không hiện nút "Thêm vào MH chính" | Phải là HTTPS và mở bằng Safari/Chrome (không dùng trình duyệt trong app Facebook/Zalo) |

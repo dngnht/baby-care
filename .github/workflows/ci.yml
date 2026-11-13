@@ -32,6 +32,12 @@ jobs:
           cache: npm
           cache-dependency-path: apps/web/package-lock.json
 
+      # A lockfile generated behind a private registry makes Vercel/CI fail
+      # with ENOTFOUND. Fail fast here instead of at deploy time.
+      - name: Lockfile uses the public npm registry
+        run: |
+          node -e "const lock=require('./package-lock.json');const bad=Object.values(lock.packages||{}).filter(p=>p.resolved&&!p.resolved.startsWith('https://registry.npmjs.org/'));if(bad.length){console.error(bad.length+' package(s) are resolved from a non-public registry');process.exit(1)}"
+
       - name: Install
         run: npm ci
 
