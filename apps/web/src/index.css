@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-night: #07110f;
+  --color-canopy: #0e1d18;
+  --color-moss: #1b3229;
+  --color-mist: #8ea79b;
+  --color-cream: #f5eee2;
+  --color-honey: #f0b563;
+  --color-ember: #e07a4f;
+
+  --font-sans:
+    'Be Vietnam Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    background-color: var(--color-night);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: var(--color-night);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-honey);
+    color: var(--color-night);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-honey);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Night-light glow: the one signature gesture of the welcome screen. */
+  .halo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(
+      62% 40% at 50% 26%,
+      rgba(240, 181, 99, 0.18),
+      rgba(224, 122, 79, 0.05) 55%,
+      transparent 76%
+    );
+    animation: breathe 14s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Vignette: keeps the edges of the canvas genuinely dark. */
+  .veil {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(
+      120% 90% at 50% 45%,
+      transparent 30%,
+      rgba(7, 17, 15, 0.82) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Fine film grain keeps the flat dark canvas from looking like a plain hex fill. */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
+
+  .rise {
+    animation: rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .rise-1 {
+    animation-delay: 0.05s;
+  }
+  .rise-2 {
+    animation-delay: 0.16s;
+  }
+  .rise-3 {
+    animation-delay: 0.24s;
+  }
+  .rise-4 {
+    animation-delay: 0.34s;
+  }
+  .rise-5 {
+    animation-delay: 0.44s;
+  }
+  .rise-6 {
+    animation-delay: 0.54s;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .halo {
+    animation: none;
+  }
+
+  .rise {
+    opacity: 1;
+    transform: none;
+  }
+}

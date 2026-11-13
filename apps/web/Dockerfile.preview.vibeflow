@@ -1,0 +1,16 @@
+FROM docker.io/library/node:22-bookworm-slim
+
+WORKDIR /app
+
+COPY apps/web/package.json apps/web/package-lock.json ./apps/web/
+RUN cd apps/web && npm ci
+
+COPY apps/web ./apps/web
+COPY knowledge ./knowledge
+
+WORKDIR /app/apps/web
+RUN npm run build
+
+EXPOSE 5173
+
+CMD ["npx", "vite", "preview", "--config", "vite.preview.config.ts", "--port", "5173"]

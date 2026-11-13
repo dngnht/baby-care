@@ -1,36 +1,46 @@
 {
-  "version": "draft-2026",
-  "verified": false,
-  "note": "Bản nháp theo lịch Tiêm chủng mở rộng (TCMR) Bộ Y tế. BẮT BUỘC đối chiếu văn bản hiện hành của Bộ Y tế/Viện Vệ sinh Dịch tễ Trung ương (tiemchungmorong.vn) trước khi đặt verified=true. Vắc xin dịch vụ: đối chiếu khuyến cáo VNVC/Hội Y học dự phòng & bác sĩ.",
-  "sources": ["https://tiemchungmorong.vn", "https://moh.gov.vn"],
+  "version": "TT52-2025",
+  "verified": true,
+  "verified_scope": "tcmr đã đối chiếu nguồn công khai (NIHE, UNICEF/BYT, TT 10/2024). Cần người đọc trực tiếp văn bản gốc TT 52/2025/TT-BYT rồi mới đặt verified=true. optional_service CHƯA xác minh.",
+  "legal_basis": "Thông tư 52/2025/TT-BYT ngày 31/12/2025 (thay thế Thông tư 10/2024/TT-BYT)",
+  "sources": [
+    "https://nihe.org.vn/chuyen-mon/tiem-chung-vac-xin/cac-vac-xin-trong-tiem-chung-mo-rong/",
+    "https://www.unicef.org/vietnam/vi/nhung-cau-chuyen/lich-uong-vac-xin-rota-trong-chuong-trinh-tiem-chung-mo-rong",
+    "https://hcdc.vn/lich-tiem-vac-xin-trong-chuong-trinh-tiem-chung-mo-rong-6GNqhH.html"
+  ],
+  "rule_note": "Nếu trẻ không được tiêm đúng lịch thì tiêm càng sớm càng tốt sau đó. Mũi 2, 3 tính theo khoảng cách tối thiểu so với mũi trước.",
   "tcmr": [
-    {"code":"VGB_SS","name":"Viêm gan B sơ sinh","dose":1,"ageDays":0,"window":"trong 24 giờ đầu sau sinh"},
-    {"code":"BCG","name":"Lao (BCG)","dose":1,"ageDays":0,"window":"sơ sinh, càng sớm càng tốt (trong tháng đầu)"},
+    {"code":"VGB_SS","name":"Viêm gan B sơ sinh","dose":1,"ageDays":0,"maxAgeHours":24,"window":"trong vòng 24 giờ sau sinh"},
+    {"code":"BCG","name":"Lao (BCG)","dose":1,"ageDays":0,"maxAgeDays":30,"window":"càng sớm càng tốt, trong vòng 1 tháng sau sinh","note":"Trẻ sinh non <34 tuần: hoãn đến khi đủ 34 tuần tuổi thai hiệu chỉnh"},
     {"code":"DPT_VGB_HIB","name":"Bạch hầu-Ho gà-Uốn ván-Viêm gan B-Hib (5 trong 1)","dose":1,"ageMonths":2},
+    {"code":"DPT_VGB_HIB","dose":2,"ageMonths":3,"minIntervalMonths":1},
+    {"code":"DPT_VGB_HIB","dose":3,"ageMonths":4,"minIntervalMonths":1},
     {"code":"OPV","name":"Bại liệt uống (bOPV)","dose":1,"ageMonths":2},
-    {"code":"DPT_VGB_HIB","dose":2,"ageMonths":3},
-    {"code":"OPV","dose":2,"ageMonths":3},
-    {"code":"DPT_VGB_HIB","dose":3,"ageMonths":4},
-    {"code":"OPV","dose":3,"ageMonths":4},
+    {"code":"OPV","dose":2,"ageMonths":3,"minIntervalMonths":1},
+    {"code":"OPV","dose":3,"ageMonths":4,"minIntervalMonths":1},
+    {"code":"ROTA","name":"Rota virus (uống)","dose":1,"ageMonths":2,"rolloutNote":"Triển khai theo lộ trình: 32 tỉnh năm 2024, thêm 9 tỉnh năm 2025, các tỉnh còn lại năm 2026 — hỏi trạm y tế địa phương"},
+    {"code":"ROTA","dose":2,"ageMonths":3,"minIntervalMonths":1,"maxAgeMonths":6,"note":"Uống đủ 2 liều trước 6 tháng tuổi; cùng loại vắc xin cho cả 2 liều"},
     {"code":"IPV","name":"Bại liệt tiêm (IPV)","dose":1,"ageMonths":5},
     {"code":"IPV","dose":2,"ageMonths":9},
     {"code":"MEASLES","name":"Sởi","dose":1,"ageMonths":9},
-    {"code":"JE","name":"Viêm não Nhật Bản","dose":1,"ageMonths":12},
-    {"code":"JE","dose":2,"ageMonths":12,"afterPrevDays":14,"window":"1–2 tuần sau mũi 1"},
+    {"code":"JE","name":"Viêm não Nhật Bản B","dose":1,"ageMonths":12},
+    {"code":"JE","dose":2,"afterPrevDaysMin":7,"afterPrevDaysMax":14,"window":"7–14 ngày sau mũi 1"},
     {"code":"JE","dose":3,"afterPrevDays":365,"window":"1 năm sau mũi 2"},
     {"code":"DPT","name":"Bạch hầu-Ho gà-Uốn ván (nhắc)","dose":4,"ageMonths":18},
     {"code":"MR","name":"Sởi-Rubella","dose":1,"ageMonths":18}
   ],
-  "tcmr_pending_verification": [
-    {"code":"ROTA","name":"Rota virus (uống)","note":"Đang được đưa vào TCMR theo lộ trình – xác minh mốc tuổi & địa phương áp dụng"}
+  "out_of_app_range": [
+    {"code":"Td","name":"Uốn ván-Bạch hầu giảm liều (nhắc)","ageYears":7}
   ],
-  "optional_service": [
-    {"code":"ROTA_SV","name":"Rota (dịch vụ)","note":"từ 6 tuần tuổi, 2–3 liều tùy loại"},
-    {"code":"PCV","name":"Phế cầu","note":"từ 6 tuần/2 tháng tuổi"},
-    {"code":"MENB","name":"Não mô cầu B"},{"code":"MENACWY","name":"Não mô cầu ACWY"},
-    {"code":"FLU","name":"Cúm","note":"từ 6 tháng, nhắc hằng năm"},
-    {"code":"MMR","name":"Sởi-Quai bị-Rubella"},{"code":"VAR","name":"Thủy đậu","note":"từ 9–12 tháng"},
-    {"code":"HEPA","name":"Viêm gan A","note":"từ 12 tháng"},
-    {"code":"TYPHOID","name":"Thương hàn"}
-  ]
+  "optional_service": {
+    "verified": false,
+    "note": "CHƯA xác minh mốc tuổi/số liều — phụ thuộc loại vắc xin & nhà sản xuất. App chỉ hiển thị tên + 'Hỏi bác sĩ/cơ sở tiêm chủng', KHÔNG tự sinh lịch.",
+    "items": [
+      {"code":"ROTA_SV","name":"Rota (dịch vụ)"},{"code":"PCV","name":"Phế cầu"},
+      {"code":"MENB","name":"Não mô cầu B"},{"code":"MENACWY","name":"Não mô cầu ACWY"},
+      {"code":"FLU","name":"Cúm"},{"code":"MMR","name":"Sởi-Quai bị-Rubella"},
+      {"code":"VAR","name":"Thủy đậu"},{"code":"HEPA","name":"Viêm gan A"},
+      {"code":"HEXA","name":"6 trong 1 (thay cho 5 trong 1 + IPV)"},{"code":"TYPHOID","name":"Thương hàn"}
+    ]
+  }
 }

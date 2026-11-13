@@ -1,0 +1,1 @@
+function t(n){if(typeof document>"u"||typeof URL>"u"||typeof URL.createObjectURL!="function")return;const o=URL.createObjectURL(n),e=document.createElement("a");e.href=o,e.download=n.name,e.rel="noopener",e.style.display="none",document.body.append(e),e.click(),e.remove(),setTimeout(()=>{typeof URL.revokeObjectURL=="function"&&URL.revokeObjectURL(o)},0)}export{t as d};

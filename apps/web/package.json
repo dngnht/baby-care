@@ -1,0 +1,45 @@
+{
+  "name": "beyeu-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "BéYêu — PWA theo dõi bé 0–24 tháng (mobile-first, tiếng Việt)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dexie": "^4.4.7",
+    "dexie-react-hooks": "^1.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.5",
+    "recharts": "^2.15.4",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@tailwindcss/vite": "^4.3.4",
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "fake-indexeddb": "^6.2.7",
+    "globals": "^15.15.0",
+    "jsdom": "^26.1.0",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^7.3.7",
+    "vite-plugin-pwa": "^1.3.0",
+    "vitest": "^3.2.7",
+    "xlsx": "^0.18.5"
+  }
+}

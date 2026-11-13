@@ -1,0 +1,113 @@
+/*
+ * T043 - printed visit report.
+ *
+ * Screen: the report reads as one document on the app's dark palette
+ * (`bg-canopy`), with hairline dividers instead of stacked cards.
+ * Print: a plain white sheet at 12pt - no chrome, no shadows, no large
+ * radii, and no section split across a page break.
+ *
+ * This stylesheet is bundled with the lazy ReportPage chunk, so the print
+ * overrides only exist while the report screen is loaded.
+ */
+
+.report-page {
+  border: 1px solid var(--color-moss);
+  border-radius: 1.5rem;
+  background-color: var(--color-canopy);
+  padding: 0.25rem 1rem 1.1rem;
+  box-shadow: 0 26px 60px -36px rgb(0 0 0 / 0.9);
+}
+
+.report-section {
+  padding: 1rem 0;
+}
+
+.report-section + .report-section {
+  border-top: 1px solid color-mix(in srgb, var(--color-moss) 75%, transparent);
+}
+
+.report-heading {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-honey) 82%, transparent);
+}
+
+.report-note {
+  margin-top: 0.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-moss) 75%, transparent);
+  padding-top: 0.85rem;
+}
+
+@page {
+  margin: 14mm;
+}
+
+@media print {
+  /* App chrome and anything the parent should not carry into the PDF. */
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  :root,
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Flatten the dark shell: white sheet, black ink, no effects. */
+  body * {
+    background-color: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    font-size: 12pt;
+  }
+
+  /* The 27rem mobile column must span the whole sheet. */
+  main {
+    min-height: 0 !important;
+  }
+
+  main > div {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .report-page {
+    background: #fff !important;
+    border: 0 !important;
+    padding: 0 !important;
+    break-inside: avoid;
+  }
+
+  .report-section {
+    break-inside: avoid;
+  }
+
+  .report-section + .report-section {
+    border-top: 1px solid #ccc !important;
+  }
+
+  .report-title {
+    font-size: 18pt !important;
+  }
+
+  .report-subtitle {
+    font-size: 11pt !important;
+  }
+
+  .report-heading {
+    font-size: 11pt !important;
+    letter-spacing: 0.08em;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}

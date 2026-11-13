@@ -1,0 +1,7 @@
+.git
+**/node_modules
+**/dist
+scripts/.cache
+.vibeflow-preview.hash
+podman-compose.preview.vibeflow.yaml
+apps/web/Dockerfile.preview.vibeflow
